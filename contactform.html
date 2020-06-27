@@ -1,0 +1,41 @@
+<?php
+$email=$POST["emailaddress"];
+$to="praise20024christ@gmail.com";
+$subject="New Email Address for mailing list"
+$headers="From: $email\n";
+$message="A New visitor to your site.\n"
+
+Email Address: $email;
+$user= "$email";
+$usersubject="Thank You";
+$userheaders="From:you@youremailaddress.com\n";
+mail($to,$subject,$message,$headers);
+mail($user,$usersubject,$userheaders);
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotact us</title>
+</head>
+<body>
+    <h1>Contact Us</h1>
+    <?php include "php.php";?>
+    <form method="POST" name="contactform" action="">
+        <p>
+            <label for="name">Your Name</label><br>
+            <input type="text" name="name">
+        </p>
+        <p>
+            <label for="email">Email</label><br>
+            <input type="email" name="Email"><br>
+        </p>
+        <p>
+            <label for="message">Your Message</label><br>
+            <textarea name="message"></textarea>
+        </p>
+        <input type="submit" value="Send Now">
+    </form>
+</body>
+</html>
